@@ -1,4 +1,4 @@
-FROM apache/airflow:2.7.1-python3.8
+FROM apache/airflow:2.7.1-python3.10
 
 # Defina o locale para pt_BR.utf8
 ENV LC_ALL pt_BR.utf8

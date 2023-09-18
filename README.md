@@ -1,20 +1,54 @@
 # Airflow Docker
 
-Este documento fornece uma descrição passo a passo do script usado para instalar o Apache Airflow usando o Docker
-Compose. O script realiza as seguintes tarefas:
+Este documento fornece um passo a passo para configurar e iniciar o Apache Airflow com Docker Compose usando o
+script `setup_script_start.sh`, que está disponível no GitHub
+em [https://github.com/ericksonlopes/airflow-docker-example](https://github.com/ericksonlopes/airflow-docker-example). O
+script realiza as seguintes tarefas:
 
-## Pré-requisitos
+## Uso do Script
 
-- Este script presume que você possui um ambiente Linux com o `apt-get` instalado.
-- Você deve ter permissões de administrador (ou usar `sudo`) para executar as etapas que exigem privilégios de
-  superusuário.
-- Caso o Docker Compose não esteja instalado em seu sistema, você pode instalá-lo executando o seguinte comando:
+Siga estas etapas para configurar e iniciar o Apache Airflow usando o repositório do GitHub:
+
+1. **Clone o Repositório**:
+
+   Abra um terminal e execute o seguinte comando para clonar o repositório do GitHub para o seu sistema:
 
    ```bash
-   apt-get install docker-compose
+   git clone https://github.com/ericksonlopes/airflow-docker-example.git
    ```
 
-## Passos
+   Isso criará uma cópia do repositório no diretório atual.
+
+2. **Acesse o Diretório do Projeto**:
+
+   Entre no diretório do projeto clonado usando o seguinte comando:
+
+   ```bash
+   cd airflow-docker-example
+   ```
+
+3. **Permissões de Execução**:
+
+   Certifique-se de que o script `setup_script_start.sh` tenha permissões de execução. Você pode conceder permissões de
+   execução com o seguinte comando:
+
+   ```bash
+   chmod +x setup_script_start.sh
+   ```
+
+4. **Execute o Script**:
+
+   Execute o script `setup_script_start.sh` com o seguinte comando:
+
+   ```bash
+   ./setup_script_start.sh
+   ```
+
+   Isso iniciará o processo de configuração e inicialização do Apache Airflow no seu sistema.
+
+## Passos do Script
+
+Aqui estão as etapas detalhadas realizadas pelo script `setup_script_start.sh`:
 
 1. **Atualização de Repositórios**:
 
@@ -32,11 +66,11 @@ Compose. O script realiza as seguintes tarefas:
 
    Este comando cria diretórios para armazenar diferentes componentes e configurações do Apache Airflow.
 
-    - `./dags`: Usado para armazenar as definições das tarefas do fluxo de trabalho.
-    - `./logs`: Onde os logs do Airflow serão armazenados.
-    - `./plugins`: Para plugins personalizados.
-    - `./config`: Para arquivos de configuração personalizados.
-    - `./data`: Para armazenamento de dados temporários ou persistentes.
+   - `./dags`: Usado para armazenar as definições das tarefas do fluxo de trabalho.
+   - `./logs`: Onde os logs do Airflow serão armazenados.
+   - `./plugins`: Para plugins personalizados.
+   - `./config`: Para arquivos de configuração personalizados.
+   - `./data`: Para armazenamento de dados temporários ou persistentes.
 
 3. **Definição da Variável de Ambiente AIRFLOW_UID**:
 
@@ -53,7 +87,7 @@ Compose. O script realiza as seguintes tarefas:
    docker build . --tag extending_airflow:latest
    ```
 
-   Esse comando cria uma imagem Docker do Apache Airflow com base no Dockerfile local. A imagem é marcada
+   Este comando cria uma imagem Docker do Apache Airflow com base no Dockerfile local. A imagem é marcada
    como `extending_airflow:latest`.
 
 5. **Execução do Docker Compose**:
@@ -68,13 +102,6 @@ Compose. O script realiza as seguintes tarefas:
    O Apache Airflow será executado com base nas configurações especificadas no arquivo `docker-compose.yml` no diretório
    atual.
 
-## Notas Adicionais
-
-- Antes de executar o script, é importante garantir que o Docker e o Docker Compose estejam instalados no sistema.
-- Certifique-se de que o usuário que está executando o script tenha permissões para usar o Docker sem usar `sudo`. Isso
-  pode exigir adicionar o usuário ao grupo `docker`.
-- Este script instala uma versão específica do Docker Compose (2.21.0). Caso o Docker Compose não esteja instalado, você
-  pode instalá-lo conforme mencionado nos pré-requisitos.
-
-Lembre-se de personalizar o script e os diretórios de acordo com seus requisitos específicos antes de executá-lo. Este
-documento fornece uma visão geral do que o script faz e como ele funciona.
+Certifique-se de personalizar o script e os diretórios de acordo com suas necessidades específicas antes de executá-lo.
+Este documento fornece uma visão geral do que o script faz e como ele funciona, tornando mais fácil configurar e iniciar
+o Apache Airflow usando Docker Compose a partir do repositório GitHub.
