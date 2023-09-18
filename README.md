@@ -45,7 +45,7 @@ Siga estas etapas para configurar e iniciar o Apache Airflow usando o repositór
    Execute o script `setup_script_start.sh` com o seguinte comando:
 
    ```bash
-   ./setup_script_start.sh
+   sudo bash setup_script_start.sh
    ```
 
    Isso iniciará o processo de configuração e inicialização do Apache Airflow no seu sistema Linux ou no WSL em sistemas

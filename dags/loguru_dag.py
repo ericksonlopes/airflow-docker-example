@@ -1,9 +1,3 @@
-__doc__ = """
-test dag loguru
-
-- tests with loguru
-"""
-
 from datetime import datetime, timedelta
 
 from airflow import DAG
@@ -19,9 +13,9 @@ default_args = {
     'retry_delay': timedelta(minutes=5),
 }
 
-with DAG('dag_loguru', default_args=default_args, schedule=timedelta(minutes=2), catchup=False) as dag:
+with DAG('dag_loguru', default_args=default_args, schedule=timedelta(minutes=2), catchup=False,
+         tags=['loguru', 'test']) as dag:
     doc_md = __doc__
-    tag = ['loguru', 'test']
 
     dag_loguru = PythonOperator(
         task_id='dag_loguru_id',
