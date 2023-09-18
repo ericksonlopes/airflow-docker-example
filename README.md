@@ -1,9 +1,12 @@
 # Airflow Docker
 
+# Documentação do Script de Configuração e Inicialização do Apache Airflow com Docker Compose
+
 Este documento fornece um passo a passo para configurar e iniciar o Apache Airflow com Docker Compose usando o
 script `setup_script_start.sh`, que está disponível no GitHub
 em [https://github.com/ericksonlopes/airflow-docker-example](https://github.com/ericksonlopes/airflow-docker-example). O
-script realiza as seguintes tarefas:
+script é um arquivo de shell (`.sh`) e é projetado para ser executado em sistemas Linux. Se você estiver usando Windows,
+será necessário o Windows Subsystem for Linux (WSL) para executá-lo. O script realiza as seguintes tarefas:
 
 ## Uso do Script
 
@@ -11,7 +14,8 @@ Siga estas etapas para configurar e iniciar o Apache Airflow usando o repositór
 
 1. **Clone o Repositório**:
 
-   Abra um terminal e execute o seguinte comando para clonar o repositório do GitHub para o seu sistema:
+   Abra um terminal no seu sistema Linux ou no Windows Subsystem for Linux (WSL) e execute o seguinte comando para
+   clonar o repositório do GitHub para o seu sistema:
 
    ```bash
    git clone https://github.com/ericksonlopes/airflow-docker-example.git
@@ -44,7 +48,8 @@ Siga estas etapas para configurar e iniciar o Apache Airflow usando o repositór
    ./setup_script_start.sh
    ```
 
-   Isso iniciará o processo de configuração e inicialização do Apache Airflow no seu sistema.
+   Isso iniciará o processo de configuração e inicialização do Apache Airflow no seu sistema Linux ou no WSL em sistemas
+   Windows.
 
 ## Passos do Script
 
@@ -104,4 +109,5 @@ Aqui estão as etapas detalhadas realizadas pelo script `setup_script_start.sh`:
 
 Certifique-se de personalizar o script e os diretórios de acordo com suas necessidades específicas antes de executá-lo.
 Este documento fornece uma visão geral do que o script faz e como ele funciona, tornando mais fácil configurar e iniciar
-o Apache Airflow usando Docker Compose a partir do repositório GitHub.
+o Apache Airflow usando Docker Compose a partir do repositório GitHub. Lembre-se de que o script é destinado a sistemas
+Linux e requer o Windows Subsystem for Linux (WSL) para ser executado em sistemas Windows.
